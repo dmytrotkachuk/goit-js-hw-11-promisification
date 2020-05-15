@@ -6,12 +6,11 @@
  */
 
 const delay = ms => {
-    //можно так
-    // return new Promise ((resolve) =>resolve(ms))
-    // но так короче
-    return Promise.resolve(ms)
-    
-  };
+    return new Promise ((resolve) => {
+      setTimeout(()=>{
+        resolve(ms)
+      }, ms)
+    })};
   
   const logger = time => console.log(`Resolved after ${time}ms`);
   
